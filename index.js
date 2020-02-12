@@ -1,6 +1,9 @@
 const rp = require('request-promise'),
 	cheerio = require('cheerio')
 
+const getAnswer = require('./modules/get_answer'),
+	{printIntro, printParsedHeaders} = require('./modules/print_data')
+
 const host = 'http://porno365.blog/'
 
 const getHTML = async url => await rp(url)
@@ -32,13 +35,11 @@ const parseHeaders = async url => {
 	return [headers, popularWords]
 }
 
-parseHeaders(host).then(sp => {
-	console.log('Топ 10 популярных слов:')
-	sp[1].slice(0, 10).forEach((word, i) => {
-		console.log(`    ${i + 1}. ${word[1]}`)
-	})
-	console.log('\n', 'Последние заголовки видео:')
-	sp[0].forEach((header, i) => {
-	console.log(`    ${i + 1}. ${header}`)
-	})
-})
+const app = async url => {
+	printIntro()
+	const answer = await getAnswer()
+	url = answer.split(':')[0] === 'http' ? answer : url
+	const data = await parseHeaders(url)
+	printParsedHeaders(data)
+}
+app(host)
