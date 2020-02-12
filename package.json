@@ -7,10 +7,18 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "request": "^2.88.0",
     "request-promise": "^4.2.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsezol/porno365-info.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vsezol/porno365-info/issues"
+  },
+  "homepage": "https://github.com/vsezol/porno365-info#readme",
+  "description": ""
 }
