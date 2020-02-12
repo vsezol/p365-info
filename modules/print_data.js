@@ -16,8 +16,8 @@ const printIntro = () => {
 		'                               |_.__/  \\_, |    \\_/  /__/ \\___| /__| \\___/ |_|',
 		'                                       |__/'
 	]
-	console.log(projectName.join('\n').rainbow)
-	console.log(authorName.join('\n').green)
+	console.log(projectName.join('\n').rainbow.bold)
+	console.log(authorName.join('\n').green.bold)
 }
 
 const printParsedHeaders = data => {
