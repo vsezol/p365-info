@@ -26,10 +26,12 @@ const parseHeaders = async url => {
 	textSet
 		.filter(i => i.length >= 4)
 		.forEach(item => {
-			popularWords.push([
-				textStr.match(new RegExp(item, 'gi')).length,
-				item
-			])
+			try {
+				popularWords.push([
+					textStr.match(new RegExp(item, 'gi')).length,
+					item
+				])
+			} catch {}
 		})
 	popularWords.sort((a, b) => b[0] - a[0])
 	return [headers, popularWords]
