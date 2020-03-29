@@ -15,4 +15,5 @@ How to use it?<br/>
 	<li>$ npm run start</li>
 	<li>ENJOY!</li>
 </ul>
+<img src="./img/screenshot.png"></img>
 </p>
